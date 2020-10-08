@@ -1,0 +1,131 @@
+#app {
+	display: grid;
+	grid-template-areas:
+		". . . ."
+		". . . ."
+		". . . .";
+	padding: 105px; 
+	grid-gap: 35px;
+	width: 97vw; 
+	height: 97vh;
+}
+
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body, p
+{
+  margin: 0;
+  padding: 0;
+}
+
+img {
+	width: 14rem;
+	padding: 10px;
+}
+
+input{
+	margin: 0px;
+	font-size: 1.2rem;
+	text-align: center;
+	border-radius: 5px;
+}
+
+.button {
+   background-color: white; 
+  color: #484848; 
+  border: 2px solid #008CBA;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 15px;
+  display: inline-block;
+  font-size: 26px;
+  margin: 0px;
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+#textbox {
+  background-color: white; 
+  color: #484848; 
+  border: 3px double #008CBA;
+  padding: 12px 24px;
+  text-align: center;
+  border-radius: 5px;
+  display: inline-block;
+  text-align: center;
+  justify-content: center; 
+}
+
+.grid-item {
+	display: grid;
+	grid-template-rows: 65% 35%;
+	background: "#dcdcdc";
+	box-shadow: rgba(0, 0, 0, 0.5) 5px 15px 50px;
+	border-radius: 5px; 
+	transition: transform 600ms;
+}
+
+.grid-box {
+	display: grid;
+	background: "#dcdcdc";
+	padding: 5px;
+	border-radius: 5px; 
+	box-shadow: rgba(0, 0, 0, 0.5) 5px 15px 50px;
+	transition: transform 600ms;
+	font-size: 1.5rem;
+	font-weight: 800;
+	align-items: center;
+	justify-content: center; 
+}
+
+.grid-three {
+	grid-template-rows: 33% 33% 34%;
+}
+
+.grid-one {
+	grid-template-rows: 100%;
+}
+	
+.grid-item:hover, .grid-box:hover {
+	transform: scale(1.1);
+	transition: transform 600ms;
+}
+
+.grid-cell-bottom, .grid-cell-top{
+	display: flex;
+	justify-content: center; 
+	align-items: center;
+}
+
+.grid-cell-bottom { 
+	font-weight: 900; 
+	font-size: 1.75rem; 
+}
+
+.grid-cell-top { 
+	border-radius: 4px 4px 0 0;  
+}
+
+.bounce { 
+	animation: bounce 1s; 
+}
+
+@keyframes bounce {
+	  0% { transform: rotate(0deg) scale(1.0); }
+	 30% { transform: rotate(10deg) scale(1.15); }
+	 70% { transform: rotate(-10deg) scale(0.85); }
+	100% { transform: rotate(  0deg) scale(1.0); }
+}

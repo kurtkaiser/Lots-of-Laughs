@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/debug.css">
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900">
+		<link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Twemoji_1f602.svg/240px-Twemoji_1f602.svg.png">
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	</head>
+	<body onload="startAKA()">
+		<div id="app" :style="gradient(active)">
+			<!---- Row 1 ---->
+			<tile id="student1"
+				v-for="tile in students[0]" 
+				:active="active" :tile="tile" :effect="gradient"
+			></tile>
+			<div class="grid-one grid-box" id="winnerBox" :style="gradient(students[2].three)">
+				<div id="textbox" :style="fontColor(students[2].three)">
+					<p style="font-size: 2rem;">Lots of Laughter</p>
+					<br>
+					<p>A battle of giggles.</p>
+					<br><br>
+					<li> Adjust inputs </li>
+					<li>Click compete</li>
+					<li>Laughs for all!</li>
+					<br>
+				</div> 
+			</div>
+			<tile id="student2"
+				v-for="tile in students[1]" 
+				:active="active" :tile="tile" :effect="gradient"
+			></tile>
+			<br>
+			<!---- Row 2 ---->
+			<div class="grid-three grid-box" :style="gradient(students[0].one)">
+					<p><input v-model="students[0].one.inputName" id="player1"  ></p> 
+					<p><input v-model="students[0].one.hp" placeholder="HP"></p> 
+					<p><input v-model="students[0].one.dps" placeholder="DPS"> </p>
+			</div>
+			<div class="grid-one grid-box" :style="gradient(students[2].three)">
+				<button id="blueBtn" class="button blueBtn" @click="compete" >Compete</button>
+			</div>
+			<div class="grid-three grid-box" :style="gradient(students[1].two)">
+					<p><input id="player2" v-model="students[1].two.inputName" placeholder="name" ></p>
+					<p><input v-model="students[1].two.hp" placeholder="HP"></p> 
+					<p><input v-model="students[1].two.dps" placeholder="DPS"> </p>
+			</div>
+			<br>
+			<!---- Row 3 ---->
+			<div class="grid-one grid-box" :style="gradient(students[0].one)">
+				<button id="blueBtn" class="button blueBtn" @click="randomize1">Randomize</button>
+			</div>
+			<div v-if="showDog" class="grid-one grid-box" :style="gradient(students[2].three)">
+				<img style="border-radius: 25px; height: 6em;" :src="image.url" contain></v-img>
+			</div>
+			<div v-else></div>
+			<div class="grid-one grid-box" :style="gradient(students[1].two)">
+				<button id="blueBtn" class="button blueBtn" @click="randomize2">Randomize</button>
+			</div>
+
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
